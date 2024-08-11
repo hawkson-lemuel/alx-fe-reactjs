@@ -32,7 +32,7 @@ const UserProfile = (props) => {
     <div style={styles.container}>
       <h2 style={styles.name}>{props.name}</h2>
       <p style={styles.age}>Age: {props.age}</p>
-      <p style={styles.bio}>{props.bio}</p>
+      <p style={styles.bio}>Bio: {props.bio}</p>
     </div>
   );
 };
