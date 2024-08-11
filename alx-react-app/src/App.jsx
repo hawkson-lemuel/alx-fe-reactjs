@@ -16,7 +16,7 @@ function App() {
       <WelcomeMessage />
       <Header />
       <MainContent />
-      <UserProfile name="Lemuel Hawkson" age="25" bio="Expert JS developer with 8+ years of experience" />
+      <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
       <Footer />
       <div>
         <a href="https://vitejs.dev" target="_blank">
