@@ -12,9 +12,9 @@ const RecipeDetails = () => {
     state.recipes.find((recipe) => recipe.id === recipeId)
   );
 
-  if (!recipe) {
-    return <p>Recipe not found</p>;
-  }
+  // if (!recipe) {
+  //   return <p>Recipe not found</p>;
+  // }
 
   const handleBack = () => {
     navigate(-1); // Navigate back to the previous page
@@ -23,14 +23,20 @@ const RecipeDetails = () => {
   return (
     <>
         <div onClick={handleBack} style={{ marginTop: '20px', marginBottom:'10px', cursor:'pointer' }}>← Back</div>
-        <div className="container">
-            <div style={{display:'flex',flexDirection:'row', justifyContent:'flex-end'}}>
-                <DeleteRecipeButton recipeId={recipeId} />
+        {
+          recipe?(
+            <div className="container">
+                <div style={{display:'flex',flexDirection:'row', justifyContent:'flex-end'}}>
+                    <DeleteRecipeButton recipeId={recipe.id} />
+                </div>
+                <h1>{recipe.title}</h1>
+                <p>{recipe.description}</p>
+                <EditRecipeForm recipe={recipe} />
             </div>
-            <h1>{recipe.title}</h1>
-            <p>{recipe.description}</p>
-            <EditRecipeForm recipe={recipe} />
-        </div>
+          ):(
+            <p>Recipe not found</p>
+          )
+        }
     </>
   );
 };
