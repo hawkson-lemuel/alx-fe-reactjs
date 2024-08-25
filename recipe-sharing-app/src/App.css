@@ -75,3 +75,41 @@ button:disabled {
   margin: 5px 0 0;
   color: #555;
 }
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #333;
+  padding: 0px 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 16px;
+}
+
+.navbar a:hover {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+.favorite-button {
+  background-color: #ff6f61; 
+  color: #fff;
+}
+
+.favorite-button.favorited {
+  background-color: #ff5722; 
+}
+
+.favorite-button:hover {
+  background-color: #e64a19; 
+}
+
+.favorite-button.favorited:hover {
+  background-color: #d84315; 
+}

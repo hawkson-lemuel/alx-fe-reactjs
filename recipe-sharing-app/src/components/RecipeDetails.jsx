@@ -11,12 +11,22 @@ const RecipeDetails = () => {
     state.recipes.find((recipe) => recipe.id === recipeId)
   );
 
-  // if (!recipe) {
-  //   return <p>Recipe not found</p>;
-  // }
+  const favorites = useRecipeStore(state => state.favorites);
+  const addFavorite = useRecipeStore(state => state.addFavorite);
+  const removeFavorite = useRecipeStore(state => state.removeFavorite);
+
+  const isFavorite = favorites.includes(recipe?.id);
 
   const handleBack = () => {
     navigate(-1); // Navigate back to the previous page
+  };
+
+  const handleFavoriteToggle = () => {
+    if (isFavorite) {
+      removeFavorite(recipe.id);
+    } else {
+      addFavorite(recipe.id);
+    }
   };
 
   return (
@@ -26,6 +36,9 @@ const RecipeDetails = () => {
           recipe?(
             <div className="container">
                 <div style={{display:'flex',flexDirection:'row', justifyContent:'flex-end'}}>
+                  <button onClick={handleFavoriteToggle} style={{marginRight:'5px'}}>
+                    {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
+                  </button>
                     <DeleteRecipeButton recipeId={recipe.id} />
                 </div>
                 <h1>{recipe.title}</h1>
