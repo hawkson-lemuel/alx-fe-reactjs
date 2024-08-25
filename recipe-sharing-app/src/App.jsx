@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import RecipeList from './components/RecipeList';
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeDetails from './components/RecipeDetails';
+import SearchBar from './components/SearchBar';
 import './App.css';
 
 function App() {
@@ -9,7 +10,15 @@ function App() {
     <Router>
       <div>
         <Routes>
-          <Route path="/" element={<><AddRecipeForm /><RecipeList /></>} />
+          <Route path="/" element={
+            <>
+              <AddRecipeForm />
+              <div className="container">
+                <SearchBar />
+                <RecipeList />
+              </div>
+            </>
+          } />
           <Route path="/recipe/:id" element={<RecipeDetails />} />
         </Routes>
       </div>
