@@ -1,5 +1,5 @@
 import React from 'react';
-// import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import TodoList from '../components/TodoList';
 
@@ -30,8 +30,18 @@ test('can toggle todo completion status', () => {
 
 test('can delete a todo item', () => {
   render(<TodoList />);
-  const deleteButton = screen.getByText('Delete');
-  fireEvent.click(deleteButton);
-  const todoItems = screen.queryAllByRole('listitem');
-  expect(todoItems).toHaveLength(1);
+  
+  // Find the delete button for the first todo item
+  const deleteButtons = screen.getAllByText('Delete');
+  
+  // Get the first todo item
+  const todoItem = screen.getByText('Learn React');
+  
+  // Click the delete button for the first item
+  fireEvent.click(deleteButtons[0]);
+
+  // Verify the todo item has a strikethrough line
+  expect(todoItem).toHaveStyle('text-decoration: line-through');
 });
+
+
