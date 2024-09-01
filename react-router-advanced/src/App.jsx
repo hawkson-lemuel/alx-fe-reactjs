@@ -31,7 +31,7 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/blog/:postId" element={<BlogPost />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
         </Routes>
       </div>
     </Router>

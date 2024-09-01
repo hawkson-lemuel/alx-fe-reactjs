@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import '../styles.css';
 
 function BlogPost() {
-  const { postId } = useParams();
-  return <div className="container">Blog Post ID: {postId}</div>;
+  const { id } = useParams();
+  return <div className="container">Blog Post ID: {id}</div>;
 }
 
 export default BlogPost;
