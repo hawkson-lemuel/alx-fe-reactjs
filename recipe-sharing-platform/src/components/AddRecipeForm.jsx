@@ -18,7 +18,6 @@ const AddRecipeForm = () => {
     if (!steps) tempErrors.steps = 'Steps are required.';
 
     setErrors(tempErrors);
-    // Returns true if no errors exist
     return Object.keys(tempErrors).length === 0;
   };
 
@@ -26,25 +25,21 @@ const AddRecipeForm = () => {
     e.preventDefault();
 
     if (!validate()) {
-      return; // Exit if validation fails
+      return;
     }
 
-    // Form submission logic (could involve API call or state update)
     const ingredientList = ingredients.split('\n').filter(item => item.trim() !== '');
-
     console.log({ title, ingredients: ingredientList, steps });
 
-    // Clear form after successful submission
     setTitle('');
     setIngredients('');
     setSteps('');
-    setErrors({}); // Clear errors
+    setErrors({});
   };
 
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-4 text-center">Add New Recipe</h1>
-      
       {Object.keys(errors).length > 0 && (
         <div className="bg-red-200 text-red-800 p-3 rounded mb-4">
           {Object.keys(errors).map((key, index) => (
@@ -52,7 +47,7 @@ const AddRecipeForm = () => {
           ))}
         </div>
       )}
-      
+
       <form onSubmit={handleSubmit} className="bg-white shadow-lg rounded-lg p-6">
         <div className="mb-4">
           <label htmlFor="title" className="block text-lg font-medium mb-2">Recipe Title</label>
@@ -89,7 +84,7 @@ const AddRecipeForm = () => {
 
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+          className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 w-full md:w-auto"
         >
           Add Recipe
         </button>
