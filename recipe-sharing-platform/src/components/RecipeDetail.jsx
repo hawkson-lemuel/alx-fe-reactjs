@@ -26,9 +26,9 @@ const RecipeDetail = () => {
         </ul>
       </div>
       <div className="bg-white shadow-lg rounded-lg p-6">
-        <h2 className="text-2xl font-semibold mb-4">Steps</h2>
+        <h2 className="text-2xl font-semibold mb-4">Instructions</h2>
         <ol className="list-decimal list-inside">
-          {recipe.steps && recipe.steps.map((step, index) => (
+          {recipe.instructions && recipe.instructions.map((step, index) => (
             <li key={index} className="text-gray-700 mb-2">{step}</li>
           ))}
         </ol>
