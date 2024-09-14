@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 const AddRecipeForm = () => {
   const [title, setTitle] = useState('');
   const [ingredients, setIngredients] = useState('');
-  const [instructions, setInstructions] = useState('');
+  const [steps, setSteps] = useState('');
   const [error, setError] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!title || !ingredients || !instructions) {
+    if (!title || !ingredients || !steps) {
       setError('All fields are required.');
       return;
     }
@@ -21,12 +21,12 @@ const AddRecipeForm = () => {
     }
 
     // Here, you would typically send the data to the server or update state
-    console.log({ title, ingredients: ingredientList, instructions });
+    console.log({ title, ingredients: ingredientList, steps });
 
     // Clear form and errors after submission
     setTitle('');
     setIngredients('');
-    setInstructions('');
+    setSteps('');
     setError('');
   };
 
@@ -56,11 +56,11 @@ const AddRecipeForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="instructions" className="block text-lg font-medium mb-2">Instructions</label>
+          <label htmlFor="steps" className="block text-lg font-medium mb-2">Steps</label>
           <textarea
-            id="instructions"
-            value={instructions}
-            onChange={(e) => setInstructions(e.target.value)}
+            id="steps"
+            value={steps}
+            onChange={(e) => setSteps(e.target.value)}
             rows="5"
             className="w-full border border-gray-300 rounded-lg p-2"
           />
