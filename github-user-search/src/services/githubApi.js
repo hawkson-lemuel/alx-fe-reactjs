@@ -12,6 +12,5 @@ export const fetchGitHubUser = async (username) => {
 };
 
 export const outputApiKey = () => {
-    console.log(process.env);
-    return `here ${process.env.REACT_APP_GITHUB_API_KEY}`;
+  return `here ${process.env.REACT_APP_GITHUB_API_KEY}`;
 }

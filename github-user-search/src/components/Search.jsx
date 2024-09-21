@@ -46,7 +46,7 @@ const Search = () => {
     <div className="home-page">
       <span>
         <h2>GitHub User Search</h2>
-        <form onSubmit={handleSubmit} className="search-bar flex flex-col gap-4 p-4">
+        <form onSubmit={handleSubmit} className="search-bar flex flex-col gap-4 p-4" style={{ display: 'flex', flexDirection: 'row' }}>
           <input
             type="text"
             placeholder="Enter GitHub username..."

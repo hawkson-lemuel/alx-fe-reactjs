@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 export const fetchUserData = async (username, location, minRepos, page = 1, perPage = 30) => {
-    console.log("Triggered");
 
     const queryParts = [];
     if (username) queryParts.push(username);
@@ -17,7 +16,6 @@ export const fetchUserData = async (username, location, minRepos, page = 1, perP
             items: response.data.items,
         };
     } catch (error) {
-        console.log("Error:", error);
         throw error;
     }
 };
