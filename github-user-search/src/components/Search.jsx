@@ -74,7 +74,7 @@ const Search = () => {
         </form>
       </span>
       {loading && <p>Loading...</p>}
-      {error && <p>Looks like we can't find the user</p>}
+      {error && <p>Looks like we cant find the user</p>}
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '80vh', overflow: 'auto' }}>
         {users.length > 0 && users.map(user => (
           <div className="user-card p-4 border shadow-lg flex flex-col items-center" key={user.login}>
