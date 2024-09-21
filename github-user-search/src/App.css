@@ -125,8 +125,7 @@ p.error {
   top: 0;
   left: 0;
   padding: 20px;
-  border-bottom: 1px solid green;
-  width:100vw
+  width: 100vw
 }
 
 #root {
@@ -142,9 +141,11 @@ p.error {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -153,6 +154,7 @@ p.error {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
